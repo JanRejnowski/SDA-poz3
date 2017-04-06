@@ -1,6 +1,7 @@
 package zajecia1;
 
 
+import java.nio.channels.Pipe;
 import java.util.Scanner;
 
 /**
@@ -9,18 +10,41 @@ import java.util.Scanner;
 public class Zajecia3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Insert first number: ");
-        int a = scanner.nextInt();
-        System.out.println("Insert second number: ");
-        int b = scanner.nextInt();
-        System.out.println("Insert third number: ");
-        int c = scanner.nextInt();
-
-        minMax(a,b,c);
+//        System.out.println("Insert first number: ");
+//        int number1 = scanner.nextInt();
+//        System.out.println("Insert second number: ");
+//        int number2 = scanner.nextInt();
+//        System.out.println("Insert third number: ");
+//        int number3 = scanner.nextInt();
+//        System.out.println("Insert weight");
+ //       int weight = scanner.nextInt();
+ //       System.out.println("Insert height.");
+//        int height = scanner.nextInt();
+        System.out.println("Podaje wagę: ");
+        int weight = scanner.nextInt();
+        System.out.println("Podaj wzrost: ");
+        double height = scanner.nextDouble();
+        bmi(weight,height);
+//        minMax(number1, number2, number3);
 
 //        fahrenheitToCelsius(80);
 //        minMax(8, 9, 40);
+
         }
+
+    public static void bmi(int weight, double heightInMeters) {
+        double bmi = weight / (heightInMeters * heightInMeters);
+        System.out.println("Your bmi: " + bmi);
+        if (bmi < 18.5) {
+            System.out.println("Your bmi is low.");
+        } else if (bmi > 24.9) {
+            System.out.println("Your bmi is too high.");
+        } else {
+            System.out.println("Your bmi is all right. ");
+        }
+
+    }
+
 
 
     public static void fahrenheitToCelsius (int fahrenheit) {

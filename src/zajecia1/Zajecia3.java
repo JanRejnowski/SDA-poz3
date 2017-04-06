@@ -29,6 +29,7 @@ public class Zajecia3 {
 
 //        fahrenheitToCelsius(80);
 //        minMax(8, 9, 40);
+        System.out.println("Zrobiłem zadanie domowe");
 
         }
 

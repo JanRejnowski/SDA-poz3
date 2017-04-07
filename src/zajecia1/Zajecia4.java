@@ -20,13 +20,14 @@ public class Zajecia4 {
 //        System.out.println("Insert day: ");
 //        int yearFromUser = scanner.nextInt ();
 //        displayDate (dayFromUser, monthFromUser, yearFromUser);
-
-     int[] array = {1,2,3,4,5,6,7,8,9,10,11,12,13};
-     int minValue = minFromArray(array);
-     int maxValue = maxFromArray(array);
-     int plus = Sum(array);
-     double avg = avg(array);
-     statistic(array);
+//     int[] array = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+//     int minValue = minFromArray(array);
+//     int maxValue = maxFromArray(array);
+//     int plus = Sum(array);
+//     double avg = avg(array);
+//     statistic(array);
+        int[] array= getArrayFromUser();
+        statistic(array);
     }
 
     public static int minFromArray(int[] array){
@@ -104,5 +105,17 @@ public class Zajecia4 {
             }
         }
         System.out.println("]");
+    }
+
+    public static int[] getArrayFromUser(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Insert number of elements: ");
+        int size = scanner.nextInt();
+        int [] array = new int[size];
+        for(int i = 0; i < array.length; i++ ){
+            System.out.println("Insert next number: ");
+            array[i] = scanner.nextInt();
+        }
+        return array;
     }
 }

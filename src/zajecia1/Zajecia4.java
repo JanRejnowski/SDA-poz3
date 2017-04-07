@@ -26,6 +26,7 @@ public class Zajecia4 {
 //     int plus = Sum(array);
 //     double avg = avg(array);
 //     statistic(array);
+//     test
         int[] array= getArrayFromUser();
         statistic(array);
     }

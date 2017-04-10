@@ -1,7 +1,6 @@
 package zajecia1;
 
 
-import java.nio.channels.Pipe;
 import java.util.Scanner;
 
 /**
@@ -10,72 +9,70 @@ import java.util.Scanner;
 public class Zajecia3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-//        System.out.println("Insert first number: ");
-//        int number1 = scanner.nextInt();
-//        System.out.println("Insert second number: ");
-//        int number2 = scanner.nextInt();
-//        System.out.println("Insert third number: ");
-//        int number3 = scanner.nextInt();
-//        System.out.println("Insert weight");
- //       int weight = scanner.nextInt();
- //       System.out.println("Insert height.");
+//        System.out.println("Insert your weight: ");
+//        int weight = scanner.nextInt();
+//        System.out.println("Insert your height: ");
 //        int height = scanner.nextInt();
-        System.out.println("Podaje wagę: ");
-        int weight = scanner.nextInt();
-        System.out.println("Podaj wzrost: ");
-        double height = scanner.nextDouble();
-        bmi(weight,height);
-//        minMax(number1, number2, number3);
+//        bmi(weight, height);
 
-//        fahrenheitToCelsius(80);
-//        minMax(8, 9, 40);
-        System.out.println("Zrobiłem zadanie domowe");
+//        System.out.println("Enter temperature in Fahrenheit: ");
+//        int fahrenheit = scanner.nextInt();
+//        fahrenheitToCelsius(fahrenheit);
 
-        }
+//        System.out.println("Enter temperature in Celsius: ");
+//        int celsius = scanner.nextInt();
+//        celsiusToFahrenheit(celsius);
 
-    public static void bmi(int weight, double heightInMeters) {
-        double bmi = weight / (heightInMeters * heightInMeters);
-        System.out.println("Your bmi: " + bmi);
-        if (bmi < 18.5) {
-            System.out.println("Your bmi is low.");
-        } else if (bmi > 24.9) {
-            System.out.println("Your bmi is too high.");
-        } else {
-            System.out.println("Your bmi is all right. ");
-        }
+//        System.out.println("Enter first number: ");
+//        int a = scanner.nextInt();
+//        System.out.println("Enter second number: ");
+//        int b = scanner.nextInt();
+//        System.out.println("Enter third number: ");
+//        int c = scanner.nextInt();
+//        minMax(a, b, c);
 
     }
 
+    public static void bmi (int weight, double heightInMeters){
+        double bmi = weight / (heightInMeters * heightInMeters);
+        System.out.println("Twoje bmi to: " + bmi);
+        if(bmi < 18.5) {
+            System.out.println("Masz niedowagę.");
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
+            System.out.println("Twoja waga jest ok.");
+        } else {
+            System.out.println("Masz nadwagę");
+        }
+    }
 
-
-    public static void fahrenheitToCelsius (int fahrenheit) {
+    public static void fahrenheitToCelsius(int fahrenheit){
         double celsius = (fahrenheit - 32) / 1.8;
         System.out.println(fahrenheit + "F = " + celsius + "C");
     }
 
-    public static void CelsiusToFahrenheit (int celsius) {
+    public static void celsiusToFahrenheit(int celsius){
         double fahrenheit = 1.8 * celsius + 32;
         System.out.println(celsius + "C = " + fahrenheit + "F");
     }
 
-    public static void minMax(int a, int b, int c) {
+    public static void minMax(int a, int b, int c){
         int min, max;
-        if(a > b && a > c) {
+        if (a >= b && a >= c){
             max = a;
-        } else if (b > a && b > c) {
+        } else if(b >= a && b >= c) {
             max = b;
         } else {
             max = c;
         }
 
-        if(a < b && a < c) {
+        if (a <= b && a <= c){
             min = a;
-        } else if (b < a && b < c) {
+        } else if (b <= a && b <= c){
             min = b;
         } else {
             min = c;
         }
-        System.out.println("Min value: " + min);
         System.out.println("Max value: " + max);
+        System.out.println("Min value: " + min);
     }
 }

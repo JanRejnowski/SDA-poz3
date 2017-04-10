@@ -26,8 +26,19 @@ public class Zajecia4 {
 //     int plus = Sum(array);
 //     double avg = avg(array);
 //     statistic(array);
-        int[] array= getArrayFromUser();
-        statistic(array);
+//        int[] array= getArrayFromUser();
+//        statistic(array);
+    }
+
+    public static void displayArray(int[] array) {
+        System.out.println("[");
+        for(int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+            if(i != array.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.print("[");
     }
 
     public static int minFromArray(int[] array){

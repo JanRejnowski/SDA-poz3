@@ -1,7 +1,6 @@
 package zajecia1;
 
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * Created by RENT on 2017-04-10.
@@ -124,9 +123,9 @@ public class Zajecia5 {
     }
 
     public static void PrintEmptySquare(int a) {
-        for (int i = 0; i < a; i++){
-            for (int j = 0; j < a; j++){
-                if((i == 0 || i == (a - 1) || (j == 0 || j == (a-1)))){
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a; j++) {
+                if ((i == 0 || i == (a - 1) || (j == 0 || j == (a - 1)))) {
                     System.out.print("1 ");
                 } else {
                     System.out.print("  ");
@@ -137,16 +136,20 @@ public class Zajecia5 {
     }
 
     public static void tree(int a) {
-        for (int i = 0; i < a; i++){
-            for(int j = 0; j < a - i - 1; j++) {
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a - i - 1; j++) {
                 System.out.print("  ");
             }
-            for (int j = 0; j < 2*i + 1; j++) {
+            for (int j = 0; j < 2 * i + 1; j++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
 
-    }
+        for (int i = 0; i < a; i++) {
 
+
+        }
+
+    }
 }

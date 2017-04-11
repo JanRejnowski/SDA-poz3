@@ -17,7 +17,9 @@ public class Zajecia5 {
 //        printOneMatrix(3);
 //        printOnesMatrix(4);
 //        PrintEmptySquare(5);
-        tree(3);
+//        tree(3);
+//        homework();
+        lineOfNumbers(4);
     }
 
 
@@ -145,11 +147,34 @@ public class Zajecia5 {
             }
             System.out.println();
         }
-
-        for (int i = 0; i < a; i++) {
-
-
+        for (int i = 0; i < a; i++){
+            for(int j = 0 ; j < a - 1; j++){
+                System.out.print("  ");
+            }
+            System.out.println("*");
         }
 
+    }
+
+    public static void homework() {
+        //losujemy liczbę z przedziału 15-25
+        //wywolac metode getArray();
+        //uzyc wygenerowanej tablicy w metodzie statistic
+        //dla wylosowane liczby - 12 wywolali metode tree
+        Random random = new Random();
+        int number = random.nextInt(10) + 15;
+        int[] array = getArray(number);
+        Zajecia4.statics(array);
+        System.out.println();
+        tree(number - 12);
+    }
+
+    public static void lineOfNumbers(int value) {
+        for(int i = 0; i < value - 1; i++){
+            for(int j = 0; j < i; j++){
+                System.out.print(" ");
+            }
+            System.out.println(i + 1);
+        }
     }
 }

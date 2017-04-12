@@ -82,16 +82,24 @@ public class Zajecia6 {
         return counter;
     }
 
-    
-    // do domu
+
     public static int sumOfDigits(int number){
-        return 0;
+        int sum = 0;
+        while(number > 0){
+            sum = sum + number % 10;
+            number = number / 10;
+        }
+        return sum;
     }
 
-    // zadanie domowe
-    // -10, 20
-    //liczba powtórzeń
-    public static int sumOfRandom(int sum) {
-        return 0;
+    public static void sumOfRandom(int value){
+        Random random = new Random();
+        int sum = 0;
+        int number = 0;
+        while (number != value){
+            number += random.nextInt((30) - 10);
+            sum += number;
+        }
+        System.out.println(sum);
     }
 }

@@ -82,7 +82,7 @@ public class Zajecia6 {
         return counter;
     }
 
-    
+
     // do domu
     public static int sumOfDigits(int number){
         return 0;

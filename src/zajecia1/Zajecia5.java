@@ -1,39 +1,63 @@
 package zajecia1;
 
 import java.util.Random;
+import java.util.Scanner;
 
-/**
- * Created by RENT on 2017-04-10.
- */
 public class Zajecia5 {
     public static void main(String[] args) {
-//        Zajecia4.statistics()
+//        randomTest();
 //        Zajecia4.displayArray(getArray(10));
 //        Zajecia4.displayArray(getArray(11));
-//        getRandomArray(5,10);
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Insert value:");
+//        int someValue = scanner.nextInt();
+//        int anotherValue = 24;
+//        Zajecia4.displayArray(getArray(someValue));
+//        Zajecia4.displayArray(getArray(anotherValue));
+//        Zajecia4.displayArray(getRandomArray(5, 10, 5));
+//        Zajecia4.displayArray(getRandomArray(10, 10));
+//        Zajecia4.displayArray(getRandomArray(10));
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Insert size:");
+//        int size = scanner.nextInt();
+//        System.out.println("Insert bound:");
+//        int bound = scanner.nextInt();
+//        System.out.println("Insert offset:");
+//        int offset = scanner.nextInt();
+//
+//        Zajecia4.statistics(getRandomArray(10));
+//        System.out.println();
+//        System.out.println();
+//        Zajecia4.statistics(getRandomArray(10, 15));
+//        System.out.println();
+//        System.out.println();
+//        Zajecia4.statistics(getRandomArray(size, bound, offset));
+//
 //        printSquare(5);
-//        printTriangle(3);
-//        printMatrixOfNumbers(3);
-//        printOneMatrix(3);
-//        printOnesMatrix(4);
-//        PrintEmptySquare(5);
-//        tree(3);
-//        homework();
-        lineOfNumbers(4);
-    }
+//        System.out.println();
+//
+//        printRectangle(4, 7);
+//        System.out.println();
+//
+//        printTriangle(5);
+//        System.out.println();
+//
+//        printMatrixOfNumbers(4);
+//        System.out.println();
+//
+//        chessBoard(4);
+//        System.out.println();
+//
+//        printEmptySquare(5);
+//        System.out.println();
+//
+//        tree(6);
 
-
-    public static int[] getArray(int value) {
-        //oblicz size
-        //utworzyc nowa tablice
-        //w petli ustawic wartosci
-        //zwrocic
-        int size = value / 2;              // wcześniej było value/2 + value % 2
-        int[] array = new int[size];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = 2 * i + value % 2;
-        }
-        return array;
+        homework();
+        lineOfNumbers(5);
+        lineOfNumbers(7);
     }
 
     public static void randomTest() {
@@ -43,12 +67,11 @@ public class Zajecia5 {
         System.out.println(random.nextInt(15) + 5);
     }
 
+    public static int[] getRandomArray(int size) {
+        return getRandomArray(size, Integer.MAX_VALUE);
+    }
+
     public static int[] getRandomArray(int size, int bound) {
-        Random random = new Random();
-        int[] array = new int[size];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(bound) + 0;
-        }
         return getRandomArray(size, bound, 0);
     }
 
@@ -61,15 +84,36 @@ public class Zajecia5 {
         return array;
     }
 
-    public static void printSquare(int a) {
-        for (int i = 0; i < a; i++) {
-            for (int j = 0; j < i + 1; j++) {
-                System.out.print("* ");
-            }
+    public static int[] getArray(int value) {
+        int size = value / 2;
+        int[] array = new int[size];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = 2 * i + value % 2;
         }
-        System.out.println();
+        return array;
     }
 
+    public static void printSquare(int a) {
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void printRectangle(int a, int b) {
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < b; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    //*
+    //* *
+    //* * *
     public static void printTriangle(int a) {
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < i + 1; j++) {
@@ -79,29 +123,33 @@ public class Zajecia5 {
         }
     }
 
-//    public static void printMatrixOfNumbers(int a){
+    // 1 2 3
+    // 4 5 6
+    // 7 8 9
+    public static void printMatrixOfNumbers(int a) {
 //        int number = 1;
-//        for (int i = 0; i < a; i++){
-//            for (int j = 0; j < a; j++){
+//        for (int i = 0; i < a; i++) {
+//            for (int j = 0 ; j < a; j++) {
 //                System.out.print(number + " ");
-//                number ++;
+//                number++;
 //            }
 //            System.out.println();
 //        }
-//    }
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a; j++) {
+                System.out.print((a * i) + (j + 1) + " ");
+            }
+            System.out.println();
+        }
+    }
 
-//    public static void printMatrixOfNumbers(int a){
-//        for (int i = 0; i < a; i++){
-//            for (int j = 0; j < a; j++) {
-//                System.out.print((a * 1));
-//            }
-//        }
-//    }
-
+    //1 0 0
+    //0 1 0
+    //0 0 1
     public static void printOneMatrix(int a) {
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < a; j++) {
-                if (j == i) {
+                if (i == j) {
                     System.out.print("1 ");
                 } else {
                     System.out.print("0 ");
@@ -111,12 +159,16 @@ public class Zajecia5 {
         }
     }
 
-    public static void printOnesMatrix(int a) {
+    //1 0 1 0
+    //0 1 0 1
+    //1 0 1 0
+    //0 1 0 1
+    public static void chessBoard(int a) {
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < a; j++) {
                 if ((i + j) % 2 == 0) {
                     System.out.print("1 ");
-                } else if ((i + j) % 2 == 1) {
+                } else {
                     System.out.print("0 ");
                 }
             }
@@ -124,10 +176,14 @@ public class Zajecia5 {
         }
     }
 
-    public static void PrintEmptySquare(int a) {
+    //1 1 1 1
+    //1     1
+    //1     1
+    //1 1 1 1
+    public static void printEmptySquare(int a) {
         for (int i = 0; i < a; i++) {
             for (int j = 0; j < a; j++) {
-                if ((i == 0 || i == (a - 1) || (j == 0 || j == (a - 1)))) {
+                if ((i == 0 || i == (a - 1)) || (j == 0 || j == (a - 1))) {
                     System.out.print("1 ");
                 } else {
                     System.out.print("  ");
@@ -137,42 +193,61 @@ public class Zajecia5 {
         }
     }
 
+    //a = 3
+    //    *
+    //  * * *
+    //* * * * *
+    //    *
+    //    *
+    //    *
     public static void tree(int a) {
         for (int i = 0; i < a; i++) {
+            //spacje
             for (int j = 0; j < a - i - 1; j++) {
                 System.out.print("  ");
             }
+            //gwiazdki
             for (int j = 0; j < 2 * i + 1; j++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
-        for (int i = 0; i < a; i++){
-            for(int j = 0 ; j < a - 1; j++){
+        for (int i = 0; i < a; i++) {
+            for (int j = 0; j < a - 1; j++) {
                 System.out.print("  ");
             }
             System.out.println("*");
         }
-
     }
 
     public static void homework() {
-        //losujemy liczbę z przedziału 15-25
-        //wywolac metode getArray();
-        //uzyc wygenerowanej tablicy w metodzie statistic
-        //dla wylosowane liczby - 12 wywolali metode tree
+        //losujemy liczbe z przedzialu 15 - 25
+        //wywolac metode getArray()
+        //uzyc wygenerowanej tablicy w metodzie Zajecia4.statistics
+        //dla wylosowanej liczby - 12 wywolali metode tree(number -12)
         Random random = new Random();
-        int number = random.nextInt(10) + 15;
+        int number = (random.nextInt(10) + 15);
         int[] array = getArray(number);
-        Zajecia4.statics(array);
-        System.out.println();
+        Zajecia4.statistics(array);
         tree(number - 12);
+//        Zajecia4.statistics(getRandomArray(10, 10, 15));
+//        System.out.println();
+//        System.out.println();
+//        Zajecia4.statistics(getRandomArray(10, 10, 15));
+//        System.out.println();
+//        System.out.println();
+//        Zajecia4.statistics(getRandomArray(10, 10, 15));
+//        System.out.println();
     }
 
+    //1
+    //  2
+    //    3
+    //      4
     public static void lineOfNumbers(int value) {
-        for(int i = 0; i < value - 1; i++){
-            for(int j = 0; j < i; j++){
-                System.out.print(" ");
+        for (int i = 0; i < value - 1; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("  ");
             }
             System.out.println(i + 1);
         }

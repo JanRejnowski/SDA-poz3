@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Zajecia4 {
     public static void main(String[] args) {
         int[] array = {1,2,3,4,5,6,2,5,7,8,5,3};
-        statics(array);
+        statistics(array);
        displayArray(array);
        displayReversed(array);
 
@@ -97,7 +97,7 @@ public class Zajecia4 {
         return abs(result);
     }
 
-    public static void statics(int[] array) {
+    public static void statistics(int[] array) {
         System.out.println("Min value: " + minFromArray(array));
         System.out.println("Max value: " + maxFromArray(array));
         System.out.println("Sum: " + sum(array));

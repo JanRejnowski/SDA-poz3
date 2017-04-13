@@ -104,5 +104,5 @@ public class Zajecia7 {
         return sum;
     }
 
-    
+
 }

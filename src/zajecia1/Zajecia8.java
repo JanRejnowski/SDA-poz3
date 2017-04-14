@@ -106,4 +106,40 @@ public class Zajecia8 {
         return palindrome;
 //        return message.equals(ananimOf(message));
     }
+
+    public static boolean startsWith(String message, String someValue){
+        char[] messageCharacters = message.toCharArray();
+        char[] someValueCharacters = someValue.toCharArray();
+        boolean flag = true;
+        int i = 0;
+        while(flag && i < someValueCharacters.length){
+            if(someValueCharacters[i] != messageCharacters[i]){
+                flag = false;
+            }
+//            flag = !(someValueCharacters[i] != messageCharacters[i]);
+            i++;
+        }
+        return flag;
+    }
+
+    public static String toUpperCase(String message) {
+        char[] charArray = message.toCharArray();
+        if(charArray[0] >= 97 && charArray[0] <= 122){
+            charArray[0] -= 32;
+        }
+
+        return String.valueOf(charArray);
+    }
+
+    public static int sumOfNumbers(String message){
+        char[] charArray = message.toCharArray();
+        int sum = 0;
+        for(int i = 0; i < charArray.length; i++){
+            if(charArray[i] > 48 && charArray[i] <= 57){
+                sum += charArray[i] - 48;
+//                sum += Character.getNumericValue(charArray[i]);
+            }
+        }
+        return sum;
+    }
 }

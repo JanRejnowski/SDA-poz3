@@ -7,53 +7,68 @@ import java.util.Scanner;
  * Created by RENT on 2017-04-12.
  */
 public class Zajecia7 {
-   public static void main(String[] args) {
-       int[][] matrix = fillWithRandomNumbers(3,3);
-       for(int i = 0; i < 100; i++){
-           matrix = biggerValues(matrix, fillWithRandomNumbers(3,3));
-           if(i % 10 == 0){
-               printMatrix(matrix);
-           }
-           printMatrix(matrix);
-       }
-//       printMatrix(fillWithRandomNumbers(3,4);
-//       printMatrix(matrix);
-//       Scanner scanner = new Scanner(System.in);
-//       System.out.println("Insert number of rows: ");
-//       int rows = scanner.nextInt();
-//       System.out.println("Insert number of columns: ");
-//       int columns = scanner.nextInt();
-//       int[][] matrix = fillWithNumbersFromUser(rows, columns);
-//       printMatrix(flip(matrix));
-//       printMatrix(matrix);
-//       int[][] matrix1 = fillWithRandomNumbers(rows, columns);
-//       int[][] matrix2 = fillWithRandomNumbers(rows, columns);
-//       printMatrix(addTwoMatrix(matrix1, matrix2));
-//       int[][] matrix = {{1,2,3}, {3,2,1}, {2,3,1}};
-//       printMatrix(multiplyBy(matrix, 3));
-//       System.out.println(sumOfElements(matrix));
-    }
+    public static void main(String[] args) {
+        //        int[][] matrix = saveToMatrixExample();
+//        int[] array = {1,4,5,6,3};
+//        int[][] matrix1 = {{1,2,3,4,5,6},
+//                           {2,3,4,5,6,7},
+//                           {6,7,4,3,2,5}};
+//        printMatrix(matrix);
+//        printMatrix(matrix1);
+//        printMatrix(fillWithRandomNumbers(4, 5));
+//        System.out.println();
+//        printMatrix(fillWithRandomNumbers(3, 4));
+//        System.out.println();
+//        printMatrix(fillWithRandomNumbers(6, 6));
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Insert number of rows: ");
+//        int rows = scanner.nextInt();
+//        System.out.println("Insert number of columns: ");
+//        int columns = scanner.nextInt();
+//        int[][] matrix = fillWithNumbersFromUser(rows, columns);
+//        printMatrix(matrix);
+//        int[][] matrix1 = fillWithRandomNumbers(3, 3);
+//        int[][] matrix2 = fillWithRandomNumbers(3, 3);
+//        printMatrix(addTwoMatrix(matrix1, matrix2));
+//        int[][] matrix = {{1,2,3}, {3,2,1}, {2, 3, 1}};
+//        printMatrix(multiplyBy(matrix, 3));
+//        System.out.println(sumOfElements(matrix));
+        ///////////////////////////////////////
+        int[][] matrix1 = fillWithRandomNumbers(3, 4);
+        int[][] matrix2 = fillWithRandomNumbers(4, 8);
+        int[][] product = product(matrix1, matrix2);
 
-    public static int[][] saveToMatrixExample() {
-        int rows = 2;
-        int columns = 4;
-        int[][] matrix = new int[rows][columns];
-        for(int i = 0; i < rows; i++){
-            for(int j = 0; j < columns; j++ ){
-                matrix[i][j] = i + j;
+        printMatrix(matrix1);
+        System.out.println();
+        System.out.println("\t*");
+        System.out.println();
+        printMatrix(matrix2);
+        System.out.println();
+        System.out.println("\t=");
+        printMatrix(product);
+        ///////////////////////////////////////
+
+
+        int[][] matrix = fillWithRandomNumbers(3, 3);
+        for (int i = 0; i < 100; i++) {
+            matrix = biggerValues(matrix, fillWithRandomNumbers(3, 3));
+            if (i % 10 == 0) {
+                System.out.println();
+                printMatrix(matrix);
             }
         }
-        return matrix;
+        printMatrix(matrix);
+
     }
 
     public static void printMatrix(int[][] matrix){
         int rows = matrix.length;
         int columns = matrix[0].length;
-        for(int i = 0; i < rows; i++) {
+        for(int i = 0; i < rows; i++){
             System.out.print("|");
-            for(int j = 0; j < columns; j++) {
+            for (int j = 0; j < columns; j++){
                 System.out.print(matrix[i][j]);
-                if(j != columns - 1) {
+                if (j != columns - 1){
                     System.out.print(", ");
                 }
             }
@@ -61,12 +76,23 @@ public class Zajecia7 {
         }
     }
 
-    public static int[][] fillWithNumbersFromUser(int rows, int columns) {
-        Scanner scanner = new Scanner(System.in);
+    public static int[][] saveToMatrixExample() {
+        int rows = 2;
+        int columns = 4;
         int[][] matrix = new int[rows][columns];
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                System.out.print("Number[" + i + "][" + j + "]: ");
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < columns; j++){
+                matrix[i][j] = i + j;
+            }
+        }
+        return matrix;
+    }
+
+    public static int[][] fillWithNumbersFromUser(int rows, int columns){
+        Scanner scanner = new Scanner(System.in);
+        int[][] matrix = new int [rows][columns];
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < columns; j++){
                 matrix[i][j] = scanner.nextInt();
             }
         }
@@ -89,7 +115,7 @@ public class Zajecia7 {
         int columns = matrix1[0].length;
         int[][] resultMatrix = new int[rows][columns];
         for(int i = 0; i < rows; i++){
-            for (int j = 0; j < columns; j++){
+            for(int j = 0; j < columns; j++){
                 resultMatrix[i][j] = matrix1[i][j] + matrix2[i][j];
             }
         }
@@ -119,7 +145,7 @@ public class Zajecia7 {
     public static int indexOfHighestSum(int[][] matrix){
         int indexOfHighestRow = 0;
         for(int i = 1; i < matrix.length; i++){
-            if (Zajecia4.sum(matrix[indexOfHighestRow]) < Zajecia4.sum(matrix[i])) {
+            if(Zajecia4.sum(matrix[indexOfHighestRow]) < Zajecia4.sum(matrix[i])){
                 indexOfHighestRow = i;
             }
         }
@@ -127,18 +153,18 @@ public class Zajecia7 {
     }
 
     public static int[][] flip(int[][] matrix){
-        int rows = matrix.length;
-        int columns = matrix[0].length;
-        int[][] newMatrix = new int[matrix[0].length][matrix.length];
-        for(int i = 0; i < rows; i++){
-            for(int j = 0; j < columns; j++){
-                newMatrix[j][i] = matrix [i][j];
+        int rowsInOldOne = matrix.length;
+        int columnsInOldOne = matrix[0].length;
+        int[][] resultMatrix = new int[columnsInOldOne][rowsInOldOne];
+        for(int i = 0; i < rowsInOldOne; i++){
+            for(int j = 0; j < columnsInOldOne; j++){
+                resultMatrix[j][i] = matrix[i][j];
             }
         }
-        return newMatrix;
+        return resultMatrix;
     }
 
-    public static int[][] biggerValues (int[][] matrix1, int[][] matrix2){
+    public static int[][] biggerValues(int[][] matrix1, int[][] matrix2){
         int[][] resultMatrix = new int[matrix1.length][matrix1[0].length];
         for(int i = 0; i < matrix1.length; i++){
             for(int j = 0; j < matrix1[0].length; j++){
@@ -152,18 +178,7 @@ public class Zajecia7 {
         return resultMatrix;
     }
 
-    public static int maxValue(int[][] matrix){
-        int max = Zajecia4.maxFromArray(matrix[0]);
-        for (int i = 1; i < matrix.length; i++){
-            int maxCandidate = Zajecia4.maxFromArray(matrix[i]);
-               if( max < maxCandidate){
-                   max = maxCandidate;
-            }
-        }
-        return max;
-    }
-
-    public static int[][] product(int[][] matrix1, int[][] matrix2) {
+    public static int[][] product(int[][] matrix1, int[][] matrix2){
         int[][] resultMatrix = new int[matrix1.length][matrix2[0].length];
         for(int i = 0; i < matrix1.length; i++){
             for(int j = 0; j < matrix2[0].length; j++){
@@ -174,4 +189,4 @@ public class Zajecia7 {
         }
         return resultMatrix;
     }
-}
+ }

@@ -53,7 +53,7 @@ public class Zajecia4 {
     public static int minFromArray(int[] array){
         int min = array[0];
         for(int i = 1; i < array.length; i++){
-            if(array[i] < 0){
+            if(array[i] < min){
                 min = array[i];
             }
         }
@@ -63,7 +63,7 @@ public class Zajecia4 {
     public static int maxFromArray(int[] array){
         int max = array[0];
         for(int i = 1; i < array.length; i++){
-            if (array[i] > 0){
+            if (array[i] > max){
                 max = array[i];
             }
         }

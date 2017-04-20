@@ -5,26 +5,26 @@ package zajecia1;
  */
 public class Zajecia9 {
     public static void main(String[] args) {
-        String message = "WOJNA";
-//        System.out.println(cezarCode(message));
-        String messageToCode = "WOJNA";
+        String superCoddedMessage = cezarCode("Some message to code", 3);
+        System.out.println(superCoddedMessage);
+        System.out.println(cezarDecode(superCoddedMessage, 3));
     }
 
-//    public static String cezarCode(String message) {
-//        return cezarCoder(messageToCode, true);
-//    }
+    public static String cezarCode(String messageToCode, int offset){ return cezarCoder(messageToCode, offset);}
+
+    public static String cezarDecode(String messageToCode, int offset){ return cezarCoder(messageToCode, -offset);}
+
+//    public static String cezarCode(String messageToCode, int offset){return cezarCoder(messageToCode, 1);}
 //
-//    public static String cezarDecode(String message) {
-//        return cezarCoder(coddedMessage, false);
+//    public static String cezarDecode(String coddedMessage){
+//        return cezarCoder(coddedMessage, -1);
 //    }
 
-    public static String cezarCoder(String message, boolean code){
+    private static String cezarCoder(String message,int offset){
         char[] charArray = message.toCharArray();
-        int offset = code ? 1 : -1;
-        for (int i = 0; i < charArray.length; i++){
+        for(int i = 0; i < charArray.length; i++){
             charArray[i] += offset;
         }
         return String.valueOf(charArray);
     }
-
 }

@@ -142,19 +142,43 @@ public class Zajecia10 {
 
     //01234567
     //Ala ma kota, kota -> 7
-    public static int find(String message, String sentence) {
-        return 0;
-    }
+//    public static int find(String message, String sentence) {
+//        char[] charArray = message.toCharArray();
+//        char[] sentenceArray = sentence.toCharArray();
+//        int j = 0;
+//        for(flag && i < message.length()){
+//            while(charArray[i] == sentenceArray[j]){
+//                j++;
+//                if(j ==)
+//            }
+//        }
+//        return 0;
+//    }
 
     //Ala ma kota i ma tez psa, ma -> 2
-    public static int countAll(String message, String sentence) {
-        return 0;
-    }
+//    public static int countAll(String message, String sentence) {
+//        int counter = 0;
+//        while (find(message, sentence) != -1){
+//            counter++;
+//            message = message.substring(find(message, sentence));
+//        }
+//    }
 
     //((2+2)*2) -> true
     //(2+2)*2) -> false
     //)(2+2)*2 -> false
     public static boolean checkRoundBraces(String expression) {
-        return true;
+        char[] charArray = expression.toCharArray();
+        int counter = 0;
+        int i = 0;
+        while(counter >= 0 && i < charArray.length){
+            if(charArray[i] == '('){
+                counter ++;
+            } else if (charArray[i] == ')'){
+                counter --;
+            }
+            i++;
+        }
+        return counter == 0;
     }
 }

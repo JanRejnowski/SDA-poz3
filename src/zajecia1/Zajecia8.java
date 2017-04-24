@@ -5,20 +5,19 @@ package zajecia1;
  */
 public class Zajecia8 {
     public static void main(String[] args) {
-//       charAndStringsTest();
-//        System.out.println(countCharacterIn("Ala ma kota i dwa psy",  'a'));
-        String pokemonMessage = "AjhGFhJifFeRyhhjI";
-//        System.out.println(countCapitalLetters(pokemonMessage));
-//        System.out.println(countSmallLetters(pokemonMessage));
-//        System.out.println(countWords("Ala ma kota"));
-//        System.out.println(switchCase("Ala ma kota"));
-//        System.out.println(ananimOf(pokemonMessage));
+//        charAndStringTest();
+//        String message = "Ala ma kota.";
+//        System.out.println(countCharacterIn(message, 'a'));
+//        System.out.println(sumOfNumbers("Ala ma 3 koty i 3 psy."));
+//        System.out.println(toUpperCase("ala ma kota"));
+//        System.out.println(toLowerCase("Ala ma kota."));
+//        System.out.println(isPalindrome("kajak"));
     }
 
-    public static void charAndStringsTest() {
+    public static void charAndStringTest() {
         String message = "Ala ma kota";
-        char znak ='a';
-        for(int i = 0; i < 26; i++){
+        char znak = 'a';
+        for(int i = 0; i < 26; i++) {
             System.out.print(znak + ", ");
             znak++;
         }
@@ -36,49 +35,77 @@ public class Zajecia8 {
         return counter;
     }
 
-    public static int countCapitalLetters(String message) {
+    public static int countCapitalLetters(String message){
         char[] charArray = message.toCharArray();
         int counter = 0;
         for(int i = 0; i < charArray.length; i++){
-            if (charArray[i] >= 65 && charArray[i] <= 90){
+            if(charArray[i] >= 65 && charArray[i] <= 90){
                 counter++;
             }
         }
         return counter;
     }
 
-    public static int countSmallLetters(String message) {
+    public static int sumOfNumbers(String message){
         char[] charArray = message.toCharArray();
-        int counter = 0;
+        int sum = 0;
         for(int i = 0; i < charArray.length; i++){
-            if(charArray[i] >= 97 && charArray[i] <= 122) {
-                counter++;
+            if(charArray[i] > 48 && charArray[i] <= 57) {
+                sum += charArray[i] - 48;
             }
         }
-        return counter;
+        return sum;
     }
 
-    public static int countWords(String message){
+    public static String toLowerCase(String message){
         char[] charArray = message.toCharArray();
-        int counter = 1;
-        for(int i = 0; i < charArray.length; i++){
-            if(charArray[i] == ' '){
-                counter++;
-            }
-        }
-        return counter;
-    }
-
-    public static String switchCase(String message){
-        char[] charArray = message.toCharArray();
-        for(int i = 0; i < charArray.length; i++){
-            if(charArray[i] >= 97 && charArray[i] <= 122){
-                charArray[i] -= 32;
-            } else if (charArray[i] >= 65 && charArray[i] <= 90){
-                charArray[i] += 32;
-            }
+        if(charArray[0] >= 65 && charArray[0] <= 90) {
+            charArray[0] = (char)(charArray[0] + 32);
         }
         return String.valueOf(charArray);
+    }
+
+    public static String toUpperCase(String message) {
+        char[] charArray = message.toCharArray();
+        if(charArray[0] >= 97 && charArray[0] <= 122){
+            charArray[0] = (char)(charArray[0] - 32);
+        }
+        return String.valueOf(charArray);
+    }
+
+    public static boolean startsWith(String message, String someValue){
+        char[] messageCharacters = message.toCharArray();
+        char[] someValueCharacters = someValue.toCharArray();
+        int i = 0;
+        boolean flag = true;
+        while(flag && i < someValueCharacters.length){
+            if(someValueCharacters[i] != messageCharacters[i]){
+                flag = false;
+            }
+            i++;
+        }
+        return flag;
+        ///////////////////
+//        boolean flag = true;
+//        int i = 0;
+//        while (flag && i < someValue.length()) {
+//            flag = !(message.charAt(i) != someValue.charAt(i))
+//            i++;
+//        }
+//        return flag;
+    }
+
+    public static boolean isPalindrome(String message){
+        char[] charArray = message.toCharArray();
+        boolean palindrome = true;
+        int i = 0;
+        while(palindrome && i < charArray.length / 2) {
+            if(charArray[i] != charArray[charArray.length - i -1]){
+                palindrome = false;
+            }
+            i++;
+        }
+        return palindrome;
     }
 
     public static String ananimOf(String message){
@@ -91,55 +118,15 @@ public class Zajecia8 {
         return String.valueOf(charArray);
     }
 
-    public static boolean isPalindrome(String message) {
+    public static String switchCase(String message){
         char[] charArray = message.toCharArray();
-        boolean palindrome = true;
-        int i = 0;
-        while (palindrome && i < charArray.length / 2) {
-            if(charArray[i] != charArray[charArray.length - i - 1]){
-                palindrome = false;
-            }
-            i++;
-        }
-        String a = "blabla";
-        String b = "blabla";
-        return palindrome;
-//        return message.equals(ananimOf(message));
-    }
-
-    public static boolean startsWith(String message, String someValue){
-        char[] messageCharacters = message.toCharArray();
-        char[] someValueCharacters = someValue.toCharArray();
-        boolean flag = true;
-        int i = 0;
-        while(flag && i < someValueCharacters.length){
-            if(someValueCharacters[i] != messageCharacters[i]){
-                flag = false;
-            }
-//            flag = !(someValueCharacters[i] != messageCharacters[i]);
-            i++;
-        }
-        return flag;
-    }
-
-    public static String toUpperCase(String message) {
-        char[] charArray = message.toCharArray();
-        if(charArray[0] >= 97 && charArray[0] <= 122){
-            charArray[0] -= 32;
-        }
-
-        return String.valueOf(charArray);
-    }
-
-    public static int sumOfNumbers(String message){
-        char[] charArray = message.toCharArray();
-        int sum = 0;
         for(int i = 0; i < charArray.length; i++){
-            if(charArray[i] > 48 && charArray[i] <= 57){
-                sum += charArray[i] - 48;
-//                sum += Character.getNumericValue(charArray[i]);
+            if(charArray[i] >= 97 && charArray[i] <= 122){
+                charArray[i] -= 32;
+            } else if (charArray[i] >= 65 && charArray[i] <= 90){
+                charArray[i] += 32;
             }
         }
-        return sum;
+        return String.valueOf(charArray);
     }
 }

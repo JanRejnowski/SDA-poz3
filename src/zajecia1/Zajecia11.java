@@ -11,7 +11,8 @@ public class Zajecia11 {
         File test = new File("C:\\Users\\RENT\\IdeaProjects\\projekt\\SDA-poz3\\test");
         readToFile(test);
 //        writeTest(test);
-        writeToFileTest(test, "Hello World");
+//        writeToFileTest(test, "Hello World");
+        System.out.println(countWordsIn(test));
     }
 
     public static void readToFile(File test) throws FileNotFoundException {
@@ -46,6 +47,27 @@ public class Zajecia11 {
             intsArray[i] = scanner.nextInt();
         }
         return intsArray;
+    }
+
+    public static int countOddIntegers(File file)throws FileNotFoundException{
+        Scanner scanner = new Scanner(System.in);
+        int counter = 0;
+        while(scanner.hasNext()) {
+            if(scanner.nextInt() % 2 == 1){
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    public static int countWordsIn(File file) throws FileNotFoundException {
+        Scanner scanner = new Scanner(file);
+        int counter = 0;
+        while(scanner.hasNext()) {
+            scanner.next();
+            counter++;
+        }
+        return counter;
     }
 
 }

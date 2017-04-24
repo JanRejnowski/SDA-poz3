@@ -107,4 +107,3 @@ public class CircleCross {
         System.out.println();
     }
 }
-

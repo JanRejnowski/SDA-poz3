@@ -11,12 +11,14 @@ public class User {
     public int age;
 
     public void display(){
-        System.out.println(firstName + " " + lastName + "age: " + age);
+        System.out.println(firstName + " " + lastName + " age: " + age);
         System.out.println("Phone number: " + phoneNumber);
         if(adress != null){
             adress.display();
         } else {
-
+            System.out.println("Address not specified.");
         }
     }
+
+
 }

@@ -5,40 +5,48 @@ package zajecia1.oop.bookstore;
  */
 public class Bookstore {
     public Book[] books;
-    public int size;
+    public int numberOfBooks;
 
-    public Bookstore(){
+    public Bookstore() {
         this.books = new Book[100];
-        this.size = 0;
+        this.numberOfBooks = 0;
     }
 
     public boolean add(Book book){
         boolean valueToReturn = false;
-        if(size < 100){
-            books[size] = book;
-            size++;
+        while(numberOfBooks < 100){
+            books[numberOfBooks] = book;
+            numberOfBooks++;
             valueToReturn = true;
         }
         return valueToReturn;
     }
 
     public void showBooks() {
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < numberOfBooks; i++){
             System.out.println(books[i]);
         }
     }
 
-//    public int getNumberOfBooks(String author){
-//        int index = 0;
-//        for(int i = 0; i < this.numberof)
-//    }
-//
-//    public Book[] getBooks(String author){
-//
-//    }
-//
-//    public Book getBook(String ISBN) {
-//
-//    }
+    public int getNumberOfBooks(String author){
+        int counter = 0;
+        for (int i = 0; i < this.numberOfBooks; i++) {
+            if(books[i].author.equals(author)){
+                counter++;
+            }
+        }
+        return counter;
+    }
 
-}
+    public Book[] getBooks(String author) {
+        Book[] booksToReturn = new Book[getNumberOfBooks(author)];
+        int index = 0;
+        for (int i = 0; i < this.numberOfBooks; i++) {
+            if (books[i].author.equals(author)) {
+                booksToReturn[index] = books[i];
+                index++;
+            }
+        }
+        return booksToReturn;
+    }
+ }

@@ -49,4 +49,17 @@ public class Bookstore {
         }
         return booksToReturn;
     }
+
+    public Book getBook(String ISBN){
+        Book bookToReturn = null;
+        int i = 0;
+        while(i < this.numberOfBooks && bookToReturn == null){
+            if(books[i].ISBN.equals(ISBN)){
+                bookToReturn = books[i];
+            }
+            i++;
+//            book = books[i].ISBN.equals(ISBN) ? books[i] : null;
+        }
+        return bookToReturn;
+    }
  }

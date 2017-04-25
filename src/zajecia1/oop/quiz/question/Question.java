@@ -1,4 +1,4 @@
-package zajecia1.oop.quiz;
+package zajecia1.oop.quiz.question;
 
 import java.util.Arrays;
 

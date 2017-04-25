@@ -1,4 +1,4 @@
-package zajecia1.oop.quiz;
+package zajecia1.oop.quiz.question;
 
 /**
  * Created by RENT on 2017-04-25.

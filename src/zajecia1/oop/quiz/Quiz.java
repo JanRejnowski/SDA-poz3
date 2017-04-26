@@ -13,6 +13,7 @@ public class Quiz {
         MockQuestionsRepository questionsRepository = new MockQuestionsRepository();
         QuizInterface quizInterface = new QuizInterface();
 
+
         int decision = quizInterface.menu();
         if(decision == 1){
             String playerName = quizInterface.insertName();
@@ -32,7 +33,7 @@ public class Quiz {
 
             quizInterface.showResult(playerName, correctAnswersCounter);
         } else if (decision == 2) {
-            quizInterface.showResults(resultsRepository.getAllResults());
+            quizInterface.showTopResults(resultsRepository.getTopResults(10));
         } else {
             System.out.println("End of game");
         }

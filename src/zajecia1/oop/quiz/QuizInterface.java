@@ -66,4 +66,15 @@ public class QuizInterface {
         }
         scanner.nextLine();
     }
+
+    public void showTopResults(Result[] topResults){
+        System.out.println("Hall of fame: ");
+        for (int i = 0; i < topResults.length; i++) {
+            System.out.print((i + 1) + ". ");
+            if (topResults[i] != null){
+                System.out.print( topResults[i].getPlayerName() + "\t" + topResults[i].getResult());
+            }
+            System.out.println();
+        }
+    }
 }

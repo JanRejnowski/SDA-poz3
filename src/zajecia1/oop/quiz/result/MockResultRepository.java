@@ -15,4 +15,13 @@ public class MockResultRepository {
     }
 
     public Result[] getAllResults(){return results;}
+
+    public Result[] getTopResults(int n){
+        Result[] resultsToReturn = new Result[n];
+        int loopSize = n < results.length ? n : results.length;
+        for (int i = 0; i < loopSize; i++) {
+            resultsToReturn[i] = results[i];
+        }
+        return resultsToReturn;
+    }
 }

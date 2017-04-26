@@ -54,8 +54,8 @@ public class QuizInterface {
         scanner.nextLine();
     }
 
-    public void showResult(String name, int result) {
-        System.out.println("Congratulations " + name + "You finished the game!");
+    public void showResult(Result result) {
+        System.out.println("Congratulations " + result.getPlayerName() + "You finished the game!");
     }
 
     public void showResults(Result[] results){

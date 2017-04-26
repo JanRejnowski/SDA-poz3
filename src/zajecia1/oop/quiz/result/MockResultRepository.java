@@ -6,22 +6,35 @@ package zajecia1.oop.quiz.result;
 public class MockResultRepository {
     private Result[] results;
 
+    private int resultsCounter;
+
     public MockResultRepository() {
-        this.results = new Result[4];
-        this.results[0] = new Result("Andrzej",3);
-        this.results[1] = new Result("Jan", 2);
-        this.results[2] = new Result("Sebastian", 1);
-        this.results[3] = new Result("Seba", 1);
+        this.resultsCounter = 0;
+        this.results = new Result[100];
+        add(new Result("Andrzej", 3));
+        add(new Result("Jan", 2));
+        this.resultsCounter = 2;
     }
 
-    public Result[] getAllResults(){return results;}
+    public Result[] getAllResults(){
+        Result[] resultsToReturn = new Result[resultsCounter];
+        for (int i = 0; i < resultsCounter; i++) {
+            resultsToReturn[i] = results[i];
+        }
+        return resultsToReturn;
+    }
 
     public Result[] getTopResults(int n){
         Result[] resultsToReturn = new Result[n];
-        int loopSize = n < results.length ? n : results.length;
+        int loopSize = n < resultsCounter ? n : resultsCounter;
         for (int i = 0; i < loopSize; i++) {
             resultsToReturn[i] = results[i];
         }
         return resultsToReturn;
+    }
+
+    public void add(Result result){
+        this.results[resultsCounter] = result;
+        resultsCounter++;
     }
 }

@@ -1,0 +1,4 @@
+Szymon 2
+Tomek 3
+Anna 5
+Janusz 1

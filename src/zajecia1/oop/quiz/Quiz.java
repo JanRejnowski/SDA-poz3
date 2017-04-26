@@ -9,22 +9,18 @@ import zajecia1.oop.quiz.result.MockResultRepository;
  */
 public class Quiz {
     public static void main(String[] args) {
+        MockResultRepository resultsRepository = new MockResultRepository();
         MockQuestionsRepository questionsRepository = new MockQuestionsRepository();
         QuizInterface quizInterface = new QuizInterface();
-//        Question[] questions = questionsRepository.getQuestions();
-//        for (int i = 0; i < questions.length; i++) {
-//            System.out.println(questions[i]);
-        MockResultRepository resultRepository = new MockResultRepository();
-//        }
 
         int decision = quizInterface.menu();
-        if (decision == 1){
+        if(decision == 1){
             String playerName = quizInterface.insertName();
             quizInterface.beforeStart();
 
             Question[] questions = questionsRepository.getQuestions();
             int correctAnswersCounter = 0;
-            for (int i = 0; i < questions.length ; i++) {
+            for (int i = 0; i < questions.length; i++) {
                 boolean result = quizInterface.showQuestion(questions[i]);
                 if(result) {
                     quizInterface.correctAnswer();
@@ -35,11 +31,10 @@ public class Quiz {
             }
 
             quizInterface.showResult(playerName, correctAnswersCounter);
-
-        } else if (decision == 2){
-            quizInterface.showResults(resultRepository.getAllResults());
+        } else if (decision == 2) {
+            quizInterface.showResults(resultsRepository.getAllResults());
         } else {
-            System.out.println("End of the game!");
+            System.out.println("End of game");
         }
     }
 }

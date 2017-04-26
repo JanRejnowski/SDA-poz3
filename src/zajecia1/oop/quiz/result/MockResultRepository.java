@@ -4,10 +4,15 @@ package zajecia1.oop.quiz.result;
  * Created by RENT on 2017-04-25.
  */
 public class MockResultRepository {
-    public Result[] getAllResults() {
-        Result[] mockResults = new Result[2];
-        mockResults[0] = new Result("Andrzej", 3);
-        mockResults[1] = new Result("Jan", 2);
-        return mockResults;
+    private Result[] results;
+
+    public MockResultRepository() {
+        this.results = new Result[4];
+        this.results[0] = new Result("Andrzej",3);
+        this.results[1] = new Result("Jan", 2);
+        this.results[2] = new Result("Sebastian", 1);
+        this.results[3] = new Result("Seba", 1);
     }
+
+    public Result[] getAllResults(){return results;}
 }

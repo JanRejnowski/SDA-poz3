@@ -33,10 +33,10 @@ public class QuizInterface {
         this.scanner.nextLine();
     }
 
-    public boolean showQuestion(Question question){
+    public boolean showQuestion(Question question) {
         System.out.println(question.getQuestion());
         String[] possibleAnswers = question.getAnswers();
-        for(int i = 0; i < possibleAnswers.length; i++) {
+        for (int i = 0; i < possibleAnswers.length; i++) {
             System.out.println((i + 1) + ". " + possibleAnswers[i]);
         }
         int answerFromUser = scanner.nextInt();
@@ -55,24 +55,16 @@ public class QuizInterface {
     }
 
     public void showResult(Result result) {
-        System.out.println("Congratulations " + result.getPlayerName() + "You finished the game!");
+        System.out.println("Congratulations" + result.getPlayerName() + "! " +
+                "You finished game with score: " + result.getResult());
     }
 
-    public void showResults(Result[] results){
-        System.out.println("Hall of fame: ");
-        for (int i = 0; i < results.length; i++) {
-            System.out.println((i + 1) + ". " +
-                    results[i].getPlayerName() + "\t" + results[i].getResult());
-        }
-        scanner.nextLine();
-    }
-
-    public void showTopResults(Result[] topResults){
-        System.out.println("Hall of fame: ");
+    public void showTopResults(Result[] topResults) {
+        System.out.println("Hall of fame:");
         for (int i = 0; i < topResults.length; i++) {
-            System.out.print((i + 1) + ". ");
-            if (topResults[i] != null){
-                System.out.print( topResults[i].getPlayerName() + "\t" + topResults[i].getResult());
+            System.out.print((i + 1) + ".\t");
+            if(topResults[i] != null) {
+                System.out.print(topResults[i].getPlayerName() + "\t" + topResults[i].getResult());
             }
             System.out.println();
         }

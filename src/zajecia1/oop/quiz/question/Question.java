@@ -16,7 +16,7 @@ public class Question {
         this.answers = answers;
     }
 
-    public boolean checkAnswer(int answer){return this.correctAnswer == answer; }
+    public boolean checkAnswer(int answer) {return this.correctAnswer == answer;}
 
     public String getQuestion() {
         return question;
@@ -30,7 +30,6 @@ public class Question {
     public String toString() {
         return "Question{" +
                 "question='" + question + '\'' +
-                ", correctAnswer=" + correctAnswer +
                 ", answers=" + Arrays.toString(answers) +
                 '}';
     }

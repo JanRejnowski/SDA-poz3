@@ -17,11 +17,7 @@ public class Result {
         return playerName + " " + result;
     }
 
-    public String getPlayerName() {
-        return playerName;
-    }
+    public String getPlayerName() { return playerName; }
 
-    public int getResult() {
-        return result;
-    }
+    public int getResult() { return result; }
 }

@@ -3,7 +3,7 @@ package zajecia1.oop.quiz.question;
 /**
  * Created by RENT on 2017-04-25.
  */
-public class MockQuestionsRepository {
+public class MockQuestionsRepository implements QuestionsRepository{
     public Question[] getQuestions() {
         Question[] questions = new Question[3];
         String[] answers = {"22", "33", "44", "55"};

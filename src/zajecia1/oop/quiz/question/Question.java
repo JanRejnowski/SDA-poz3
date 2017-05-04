@@ -16,15 +16,11 @@ public class Question {
         this.answers = answers;
     }
 
-    public boolean checkAnswer(int answer) {return this.correctAnswer == answer;}
+    public boolean checkAnswer(int answer){return this.correctAnswer == answer; }
 
-    public String getQuestion() {
-        return question;
-    }
+    public String getQuestion() { return question; }
 
-    public String[] getAnswers() {
-        return answers;
-    }
+    public String[] getAnswers() { return answers; }
 
     @Override
     public String toString() {

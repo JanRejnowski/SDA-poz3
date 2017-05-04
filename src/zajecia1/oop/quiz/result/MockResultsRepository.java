@@ -12,20 +12,18 @@ public class MockResultsRepository implements ResultsRepository {
     public MockResultsRepository() {
         this.resultsCounter = 0;
         this.results = new Result[100];
-    }
-
-    public void add(Result result) {
-        this.results[resultsCounter] = result;
-        resultsCounter++;
+        add(new Result("Andrzej", 3));
+        add(new Result("Jan", 2));
     }
 
     public Result[] getAllResults() {
         Result[] resultsToReturn = new Result[resultsCounter];
-        for(int i = 0; i < resultsCounter; i++){
+        for (int i = 0; i < resultsCounter; i++) {
             resultsToReturn[i] = results[i];
         }
         return resultsToReturn;
     }
+
 
     public Result[] getTopResults(int n) {
         Result[] resultsToReturn = new Result[n];
@@ -34,5 +32,11 @@ public class MockResultsRepository implements ResultsRepository {
             resultsToReturn[i] = results[i];
         }
         return resultsToReturn;
+    }
+
+
+    public void add(Result result) {
+        this.results[resultsCounter] = result;
+        resultsCounter++;
     }
 }

@@ -3,7 +3,7 @@ package zajecia1.oop;
 /**
  * Created by RENT on 2017-04-24.
  */
-public class Adress {
+public class Address {
     public String city;
     public String street;
     public int flatNumber;

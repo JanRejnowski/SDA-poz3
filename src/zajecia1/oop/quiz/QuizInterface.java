@@ -12,7 +12,9 @@ public class QuizInterface {
 
     private Scanner scanner;
 
-    public QuizInterface() { this.scanner = new Scanner(System.in); }
+    public QuizInterface() {
+        this.scanner = new Scanner(System.in);
+    }
 
     public int menu() {
         System.out.println("1. Start");
@@ -24,12 +26,12 @@ public class QuizInterface {
     }
 
     public String insertName() {
-        System.out.println("Insert your name: ");
+        System.out.println("Insert yourn name: ");
         return this.scanner.nextLine();
     }
 
     public void beforeStart() {
-        System.out.println("Press enter to start");
+        System.out.println("Press Enter to start");
         this.scanner.nextLine();
     }
 
@@ -59,18 +61,28 @@ public class QuizInterface {
                 "You finished game with score: " + result.getResult());
     }
 
+    public void showResults(Result[] results) {
+        System.out.println("Hall of fame:");
+        for (int i = 0; i < results.length; i++) {
+            System.out.println((i + 1) + ".\t" +
+                    results[i].getPlayerName() + "\t" + results[i].getResult());
+        }
+        scanner.nextLine();
+    }
+
     public void showTopResults(Result[] topResults) {
         System.out.println("Hall of fame:");
         for (int i = 0; i < topResults.length; i++) {
             System.out.print((i + 1) + ".\t");
-            if(topResults[i] != null) {
+            if (topResults[i] != null) {
                 System.out.print(topResults[i].getPlayerName() + "\t" + topResults[i].getResult());
             }
             System.out.println();
         }
     }
 
-    public void afterGameEnded(){
+    public void afterGameEnded() {
         System.out.println("Game ended.");
     }
 }
+

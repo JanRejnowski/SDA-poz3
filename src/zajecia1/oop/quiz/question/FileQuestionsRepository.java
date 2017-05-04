@@ -7,37 +7,30 @@ import java.util.Scanner;
 /**
  * Created by RENT on 2017-04-27.
  */
-public class FileQuestionsRepository implements QuestionsRepository {
+public class FileQuestionsRepository implements QuestionsRepository{
 
     private String pathToFile;
 
     private File fileWithResults;
 
-    public FileQuestionsRepository(String pathToFile) {
+    public FileQuestionsRepository(String pathToFile){
         this.pathToFile = pathToFile;
         this.fileWithResults = new File(pathToFile);
     }
 
-    public int getSize(){
+    public int getSize() throws FileNotFoundException {
+        Scanner scanner = new Scanner(fileWithResults);
         int counter = 0;
-        try {
-            Scanner scanner = new Scanner(fileWithResults);
-            while(scanner.hasNextLine()) {
-                counter++;
-                scanner.nextLine();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        while (scanner.hasNextLine()) {
+            counter++;
+            scanner.nextLine();
         }
         return counter/6;
     }
 
-
-
-    @Override
     public Question[] getQuestions() {
         Question[] questions = null;
-        try {
+        try{
             Scanner scanner = new Scanner(fileWithResults);
             questions = new Question[getSize()];
             int index = 0;
@@ -52,12 +45,9 @@ public class FileQuestionsRepository implements QuestionsRepository {
                 questions[index] = map(questionText, answers, correctAnswer);
                 index++;
             }
-        }
-         catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-
         return questions;
     }
 

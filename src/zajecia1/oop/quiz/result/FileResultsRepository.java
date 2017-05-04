@@ -12,7 +12,7 @@ public class FileResultsRepository implements ResultsRepository {
 
     private File fileWithResults;
 
-    public FileResultsRepository(String pathToFile){
+    public FileResultsRepository(String pathToFile) {
         this.pathToFile = pathToFile;
         this.fileWithResults = new File(pathToFile);
     }
@@ -26,17 +26,18 @@ public class FileResultsRepository implements ResultsRepository {
                 scanner.nextLine();
             }
         } catch (FileNotFoundException e) {
-                e.printStackTrace();
+            e.printStackTrace();
         }
         return counter;
     }
+
 
     public Result[] getAllResults() {
         Result[] results = new Result[getSize()];
         try {
             Scanner scanner = new Scanner(fileWithResults);
             int i = 0;
-            while (scanner.hasNextLine()) {
+            while(scanner.hasNextLine()) {
                 results[i] = mapToResult(scanner.nextLine());
                 i++;
             }
@@ -48,7 +49,7 @@ public class FileResultsRepository implements ResultsRepository {
 
     public Result[] getTopResults(int n) {
         Result[] resultsToReturn = new Result[n];
-        try{
+        try {
             Scanner scanner = new Scanner(fileWithResults);
             int loopSize = n < getSize() ? n : getSize();
             for (int i = 0; i < loopSize; i++) {

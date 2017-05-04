@@ -4,9 +4,9 @@ package zajecia1.oop.quiz.result;
  * Created by RENT on 2017-04-27.
  */
 public interface ResultsRepository {
-    public Result[] getAllResults();
+    Result[] getAllResults();
 
-    public Result[] getTopResults(int n);
+    Result[] getTopResults(int n);
 
-    public void add(Result result);
+    void add(Result result);
 }

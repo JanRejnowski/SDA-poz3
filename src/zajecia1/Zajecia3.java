@@ -11,68 +11,67 @@ public class Zajecia3 {
         Scanner scanner = new Scanner(System.in);
 //        System.out.println("Insert your weight: ");
 //        int weight = scanner.nextInt();
-//        System.out.println("Insert your height: ");
-//        int height = scanner.nextInt();
+//        System.out.println("Insert your height in meters: ");
+//        double height = scanner.nextDouble();
 //        bmi(weight, height);
-
-//        System.out.println("Enter temperature in Fahrenheit: ");
+//        System.out.println("Insert temperature in F: ");
 //        int fahrenheit = scanner.nextInt();
-//        fahrenheitToCelsius(fahrenheit);
-
-//        System.out.println("Enter temperature in Celsius: ");
+//        System.out.println("Insert temperature in C: ");
 //        int celsius = scanner.nextInt();
+//        fahrenheitToCelsius(fahrenheit);
 //        celsiusToFahrenheit(celsius);
-
-//        System.out.println("Enter first number: ");
+//        System.out.println("Insert first number: ");
 //        int a = scanner.nextInt();
-//        System.out.println("Enter second number: ");
+//        System.out.println("Insert second number: ");
 //        int b = scanner.nextInt();
-//        System.out.println("Enter third number: ");
+//        System.out.println("Insert third number: ");
 //        int c = scanner.nextInt();
 //        minMax(a, b, c);
-
     }
 
-    public static void bmi (int weight, double heightInMeters){
+    public static void bmi(int weight, double heightInMeters) {
         double bmi = weight / (heightInMeters * heightInMeters);
         System.out.println("Twoje bmi to: " + bmi);
-        if(bmi < 18.5) {
-            System.out.println("Masz niedowagę.");
-        } else if (bmi >= 18.5 && bmi <= 24.9) {
-            System.out.println("Twoja waga jest ok.");
+        if(bmi < 18.5){
+            System.out.println("Masz niedowage");
+        } else if(bmi >= 18.5 && bmi <= 24.9) {
+            System.out.println("Twoja waga jest ok");
         } else {
-            System.out.println("Masz nadwagę");
+            System.out.println("Masz nadwage");
         }
     }
 
-    public static void fahrenheitToCelsius(int fahrenheit){
+    public static void fahrenheitToCelsius(int fahrenheit) {
+        //(fahrenheit - 32) / 1.8
         double celsius = (fahrenheit - 32) / 1.8;
-        System.out.println(fahrenheit + "F = " + celsius + "C");
+        System.out.println(fahrenheit + "F" + "=" + celsius + "C");
     }
 
-    public static void celsiusToFahrenheit(int celsius){
+    public static void celsiusToFahrenheit(int celsius) {
+        //(fahrenheit - 32) / 1.8
         double fahrenheit = 1.8 * celsius + 32;
-        System.out.println(celsius + "C = " + fahrenheit + "F");
+        System.out.println(celsius + "C" + "=" + fahrenheit + "F");
     }
 
-    public static void minMax(int a, int b, int c){
+    public static void minMax(int a, int b, int c) {
         int min, max;
-        if (a >= b && a >= c){
+        if(a >= b && a >= c) {
             max = a;
-        } else if(b >= a && b >= c) {
+        } else if (b >= a && b >= c) {
             max = b;
         } else {
             max = c;
         }
 
-        if (a <= b && a <= c){
+        if(a <= b && a <= c) {
             min = a;
-        } else if (b <= a && b <= c){
+        } else if(b <= a && b <= c){
             min = b;
         } else {
             min = c;
         }
-        System.out.println("Max value: " + max);
+
         System.out.println("Min value: " + min);
+        System.out.println("Max value: " + max);
     }
 }

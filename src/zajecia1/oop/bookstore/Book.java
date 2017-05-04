@@ -4,43 +4,28 @@ package zajecia1.oop.bookstore;
  * Created by RENT on 2017-04-24.
  */
 public class Book {
+    private String title;
+    private String description;
     private String author;
     private String releaseDate;
     private int size;
     private String ISBN;
-    private String [] content;
-    private String title;
-    private String description;
+    private String[] content;
 
-    public Book (String title, String author, String releaseDate, String ISBN){
+    public Book(String title, String author, String releaseDate, String ISBN){
         this.title = title;
         this.author = author;
         this.releaseDate = releaseDate;
         this.ISBN = ISBN;
+        this.description = "To be updated";
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public String getTitle() {
+        return title;
     }
 
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
-    }
-
-    public void setContent(String[] content) {
-        this.content = content;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    public String getDescription() {
+        return description;
     }
 
     public String getAuthor() {
@@ -63,12 +48,32 @@ public class Book {
         return content;
     }
 
-    public String getTitle() {
-        return title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setContent(String[] content) {
+        this.content = content;
     }
 
     @Override

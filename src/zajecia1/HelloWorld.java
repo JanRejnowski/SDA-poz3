@@ -1,5 +1,7 @@
 package zajecia1;
 
+import java.util.Scanner;
+
 /**
  * Created by RENT on 2017-04-04.
  */
@@ -9,11 +11,10 @@ public class HelloWorld {
 //        sumOfElements();
 //        sumOfEven();
 //        sumOfPositive();
-//        sumOfEvenGreaterThan0();
+//        sumOfEvenGraterThan0();
 //        avg();
 //        sumOf();
-//        avgMultiplied();
-//        displayEvenNumbers();
+//        avgOfMultipliedBy();
 //        listEvenGreaterThan0();
 //        greaterThan0();
 //        arrayTest();
@@ -23,89 +24,79 @@ public class HelloWorld {
     }
 
     public static void sumOfElements() {
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+        int[] array = {1,2,3,4,5,6,7,8,9,4,5,6};
         int sum = 0;
-        for (int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
         System.out.println("Sum: " + sum);
     }
 
-    public static void sumOfEven(){
-        int[] array = {1,2,3,4,5,6,7,8,9,0};
+    public static void sumOfEven() {
+        int[] array = {1,2,3,4,5,6,7,8,9,4,5,6};
         int sum = 0;
-        for (int i = 0; i < array.length; i++){
-            if(array[i] % 2 == 0){
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] % 2 == 0 ){
                 sum += array[i];
             }
         }
-        System.out.println("Sum of even numbers: " + sum);
+        System.out.println("Sum of even elements is: " + sum);
     }
 
-    public static void sumOfPositive(){
-        int[] array = {1,2,3,4,-5,6,-7,8,-9,0};
+    public static void sumOfPositive() {
+        int[] array = {1,2,3,4,-5,6,7,-8,-9,-4,-5,6};
         int sum = 0;
-        for(int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             if(array[i] > 0){
                 sum += array[i];
             }
         }
-        System.out.println("Sum of positive numbers: " + sum);
+        System.out.println("Sum of positive numbers is: " + sum);
     }
 
-    public static void sumOfEvenGreaterThan0(){
-        int[] array = {1,2,3,4,5,6,7,8,9,0};
+    public static void sumOfEvenGraterThan0() {
+        int[] array = {1,2,-3,-4,5,6,7,-8,-9,-4,5,6};
         int sum = 0;
-        for(int i = 0; i < array.length; i++){
-            if(array[i] % 2 == 0 && array[i] > 0){
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] > 0 && array[i] % 2 == 0){
                 sum += array[i];
             }
         }
-        System.out.println("The sum of even greater than 0 is: " + sum);
+        System.out.println("Sum: " + sum);
     }
 
-    public static void avg(){
-        int[] array = {1,2,3,4,5,6,7,8,9,0};
+    public static void avg() {
+        int[] array = {1,2,3,4,5,6,7,8,9,4,5,6};
         int sum = 0;
-        for(int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
         System.out.println("Sum: " + sum);
         System.out.println("No: " + array.length);
-        System.out.println("Average: " + sum / (double) array.length);
+        System.out.println("Average: " + sum/(double) array.length);
     }
 
-    public static void sumOf(){
+    public static void sumOf() {
         int number = 10;
         int sum = 0;
-        for (int i = 0; i < number; i++){
+        for (int i = 0; i < number; i++) {
             sum += i;
         }
         System.out.println(sum);
     }
 
-    public static void avgMultiplied() {
-        int[] array = {1,2,2,3};
+    public static void avgOfMultipliedBy() {
+        int[] array = {1, 2, 2, 3};
         int sum = 0;
-        for(int i = 1; i < array.length; i++){
+        for (int i = 1; i < array.length; i++) {
             sum += array[i] * i;
-            System.out.println(sum);
         }
-        System.out.println(sum / (double) array.length);
-    }
-
-    public static void displayEvenNumbers() {
-        int[] array = {1,2,3,4,5,6,7,8,9,0};
-        for(int i = 0; i < array.length; i++){
-            if(array[i] % 2 == 0){
-                System.out.println(array[i]);
-            }
-        }
+        System.out.println(sum/(double) array.length);
     }
 
     public static void listEvenGreaterThan0() {
-        int[] array = {-1, 2, -3, -4, -5, 6, 7, -8, 9, 0};
-        for (int i = 0; i < array.length; i++){
+        int[] array = {1,2,3,-4,-5,-6,7,-8,-9,4,-5,6};
+        for (int i = 0; i < array.length; i++) {
             if(array[i] > 0 && array[i] % 2 == 0){
                 System.out.println(array[i]);
             }
@@ -113,8 +104,8 @@ public class HelloWorld {
     }
 
     public static void greaterThan0() {
-        int[] array = {-1,-2,-3,-4,-5,-6,-7,6,5,3,2,9};
-        for(int i = 0; i < array.length; i++){
+        int[] array = {1,2,3,-4,-5,-6,7,-8,-9,4,5,6};
+        for (int i = 0; i < array.length; i++) {
             if(array[i] > 0){
                 System.out.println(array[i]);
             }
@@ -122,14 +113,16 @@ public class HelloWorld {
     }
 
     public static void arrayTest() {
-        int[] array = {1,2,3,4,5,6,7,8,9};
-        for (int i = 0; i < array.length; i++){
+        int[] array = {1,2,3,4,5,6,7,8,9,4,5,6};
+        for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
     }
 
     public static void checkAge() {
-        int age = 15;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your age: ");
+        int age = scanner.nextInt();
         if(age >= 18){
             System.out.println("Age over 18");
         } else {
@@ -138,23 +131,28 @@ public class HelloWorld {
     }
 
     public static void isNumberEven() {
-        int number = 4;
-        if (number % 2 == 0){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number: ");
+        int number = scanner.nextInt();
+        if(number % 2 == 0){
             System.out.println("Number is even");
-        } else{
+        } else {
             System.out.println("Number is odd");
         }
     }
 
     public static void checkBigger() {
-        int number1 = 7;
-        int number2 = 9;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number 1: ");
+        int number1 = scanner.nextInt();
+        System.out.println("Enter number 2: ");
+        int number2 = scanner.nextInt();
         if(number1 > number2){
-            System.out.println("Number 1 is bigger.");
+            System.out.println("Number 1 is bigger!");
         } else if(number1 == number2){
-            System.out.println("Numbers are equal");
+            System.out.println("Number 1 is equal to number 2!");
         } else {
-            System.out.println("Number 2 is bigger");
+            System.out.println("Number 2 is bigger!");
         }
     }
 }

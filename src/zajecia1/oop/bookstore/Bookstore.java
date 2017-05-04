@@ -21,12 +21,12 @@ public class Bookstore {
         for (int i = 0; i < this.numberOfBooks; i++) {
             booksToReturn[i] = books[i];
         }
-        return books;
+        return booksToReturn;
     }
 
     public boolean add(Book book){
         boolean valueToReturn = false;
-        while(numberOfBooks < 100){
+        if(numberOfBooks < 100) {
             books[numberOfBooks] = book;
             numberOfBooks++;
             valueToReturn = true;
@@ -35,15 +35,15 @@ public class Bookstore {
     }
 
     public void showBooks() {
-        for (int i = 0; i < numberOfBooks; i++){
+        for (int i = 0; i < numberOfBooks; i++) {
             System.out.println(books[i]);
         }
     }
 
     public int getNumberOfBooks(String author){
         int counter = 0;
-        for (int i = 0; i < this.numberOfBooks; i++) {
-            if(books[i].getAuthor().equals(author)){
+        for (int i = 0; i < numberOfBooks; i++) {
+            if(books[i].getAuthor().equals(author)) {
                 counter++;
             }
         }
@@ -54,7 +54,7 @@ public class Bookstore {
         Book[] booksToReturn = new Book[getNumberOfBooks(author)];
         int index = 0;
         for (int i = 0; i < this.numberOfBooks; i++) {
-            if (books[i].getAuthor().equals(author)) {
+            if(books[i].getAuthor().equals(author)){
                 booksToReturn[index] = books[i];
                 index++;
             }
@@ -62,16 +62,14 @@ public class Bookstore {
         return booksToReturn;
     }
 
-    public Book getBook(String ISBN){
-        Book bookToReturn = null;
+    public Book getBook(String ISBN) {
+        Book book = null;
         int i = 0;
-        while(i < this.numberOfBooks && bookToReturn == null){
+        while (i < this.numberOfBooks && book == null){
             if(books[i].getISBN().equals(ISBN)){
-                bookToReturn = books[i];
+                book = books[i];
             }
-            i++;
-//            book = books[i].ISBN.equals(ISBN) ? books[i] : null;
         }
-        return bookToReturn;
+        return book;
     }
- }
+}
